@@ -11,7 +11,7 @@
         "laravel/framework": "5.6.*",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "^1.0",
-        "socialiteproviders/gitlab": "^3.0"
+        "pinfort/gitlab": "dev-master"
     },
     "require-dev": {
         "filp/whoops": "^2.0",

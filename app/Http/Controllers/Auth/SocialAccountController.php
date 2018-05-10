@@ -8,6 +8,7 @@ use Laravel\Socialite\Contracts\User as ProviderUser;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\LinkedSocialAccount;
+use Laravel\Socialite\Facades\Socialite;
 
 class SocialAccountController extends Controller
 {
@@ -24,7 +25,10 @@ class SocialAccountController extends Controller
     public function redirectToProvider($provider)
     {
         in_array($provider, $this->services) ?: abort(404) ;
-        return \Socialite::driver($provider)->redirect();
+        if ($provider === 'gitlab') {
+            return Socialite::driver('gitlab')->scopes(['read_repository', 'read_user'])->redirect();
+        }
+        return Socialite::driver($provider)->redirect();
     }
 
     /**
@@ -36,8 +40,9 @@ class SocialAccountController extends Controller
     {
         in_array($provider, $this->services) ?: abort(404) ;
         try {
-            $user = \Socialite::with($provider)->user();
+            $user = Socialite::with($provider)->user();
         } catch (\Exception $e) {
+            \Log::info($e);
             return redirect('/auth/login');
         }
 
@@ -45,6 +50,8 @@ class SocialAccountController extends Controller
             $user,
             $provider
         );
+
+        \Log::info($authUser);
 
         auth()->login($authUser, true);
 
