@@ -11,6 +11,11 @@ use App\LinkedSocialAccount;
 
 class SocialAccountController extends Controller
 {
+    protected $services = [
+        'twitter',
+        'gitlab',
+    ];
+
     /**
      * Redirect the user to the authentication page.
      *
@@ -18,6 +23,7 @@ class SocialAccountController extends Controller
      */
     public function redirectToProvider($provider)
     {
+        in_array($provider, $this->services) ?: abort(404) ;
         return \Socialite::driver($provider)->redirect();
     }
 
@@ -28,7 +34,7 @@ class SocialAccountController extends Controller
      */
     public function handleProviderCallback($provider)
     {
-
+        in_array($provider, $this->services) ?: abort(404) ;
         try {
             $user = \Socialite::with($provider)->user();
         } catch (\Exception $e) {
@@ -45,7 +51,7 @@ class SocialAccountController extends Controller
         return redirect()->to('/home');
     }
 
-    public function findOrCreate(ProviderUser $providerUser, $provider)
+    protected function findOrCreate(ProviderUser $providerUser, $provider)
     {
         $account = LinkedSocialAccount::where('provider_name', $provider)
                    ->where('provider_id', $providerUser->getId())
