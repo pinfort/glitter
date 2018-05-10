@@ -38,6 +38,7 @@
     "extra": {
         "laravel": {
             "dont-discover": [
+                "laravel/socialite"
             ]
         }
     },
