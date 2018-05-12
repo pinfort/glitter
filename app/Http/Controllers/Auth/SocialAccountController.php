@@ -42,7 +42,6 @@ class SocialAccountController extends Controller
         try {
             $user = Socialite::with($provider)->user();
         } catch (\Exception $e) {
-            \Log::info($e);
             return redirect('/auth/login');
         }
 
@@ -50,8 +49,6 @@ class SocialAccountController extends Controller
             $user,
             $provider
         );
-
-        \Log::info($authUser);
 
         auth()->login($authUser, true);
 
@@ -66,29 +63,25 @@ class SocialAccountController extends Controller
 
         if ($account) {
             return $account->user;
-        } else {
-
-            $user = Auth::user();
-
-            
-            if ((!$user) or is_null($user)) {
-                if ($provider === 'twitter') {
-                    $user = User::create([
-                        'email' => $providerUser->getEmail(),
-                        'name'  => $providerUser->getName(),
-                    ]);
-                } else {
-                    redirect(route('login'));
-                }
-            }
-
-            $user->accounts()->create([
-                'provider_id'   => $providerUser->getId(),
-                'provider_name' => $provider,
-            ]);
-
-            return $user;
-
         }
+
+        $user = Auth::user();
+
+        if ((!$user) or is_null($user)) {
+            if ($provider === 'twitter') {
+                $user = User::create([
+                    'email' => $providerUser->getEmail(),
+                    'name'  => $providerUser->getName(),
+                ]);
+            } else {
+                redirect(route('login'));
+            }
+        }
+        $user->accounts()->create([
+            'provider_id'   => $providerUser->getId(),
+            'provider_name' => $provider,
+        ]);
+
+        return $user;
     }
 }
