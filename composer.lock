@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d30682febc555b64439f66012cde048d",
+    "content-hash": "94b705efdf151793506d3b7e219934fe",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1633,43 +1633,6 @@
             "time": "2018-04-04T21:24:14+00:00"
         },
         {
-            "name": "pinfort/gitlab",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pinfort/GitLab.git",
-                "reference": "a78495da6f12c3004d0534c82c363fb79c22f413"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pinfort/GitLab/zipball/a78495da6f12c3004d0534c82c363fb79c22f413",
-                "reference": "a78495da6f12c3004d0534c82c363fb79c22f413",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.6 || ^7.0",
-                "socialiteproviders/manager": "~2.0 || ~3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "SocialiteProviders\\GitLab\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christoffer Martinsen",
-                    "email": "christoffermartinsen@gmail.com"
-                }
-            ],
-            "description": "GitLab OAuth2 Provider for Laravel Socialite",
-            "time": "2018-05-10T15:27:44+00:00"
-        },
-        {
             "name": "psr/container",
             "version": "1.0.0",
             "source": {
@@ -2014,6 +1977,43 @@
                 "uuid"
             ],
             "time": "2018-01-20T00:28:24+00:00"
+        },
+        {
+            "name": "socialiteproviders/gitlab",
+            "version": "v3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/GitLab.git",
+                "reference": "bab80e8e16853e062c58013b1c1f474bd5a5c49a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SocialiteProviders/GitLab/zipball/bab80e8e16853e062c58013b1c1f474bd5a5c49a",
+                "reference": "bab80e8e16853e062c58013b1c1f474bd5a5c49a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0",
+                "socialiteproviders/manager": "~2.0 || ~3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SocialiteProviders\\GitLab\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christoffer Martinsen",
+                    "email": "christoffermartinsen@gmail.com"
+                }
+            ],
+            "description": "GitLab OAuth2 Provider for Laravel Socialite",
+            "time": "2018-05-11T03:10:27+00:00"
         },
         {
             "name": "socialiteproviders/manager",
@@ -4819,9 +4819,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "pinfort/gitlab": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
