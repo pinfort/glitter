@@ -25,6 +25,9 @@ class SocialAccountController extends Controller
     public function redirectToProvider($provider)
     {
         in_array($provider, $this->services) ?: abort(404) ;
+        if (!Auth::check() and $provider != 'twitter') {
+            return redirect(route('login'));
+        }
         if ($provider === 'gitlab') {
             return Socialite::driver('gitlab')->scopes(['read_repository', 'read_user', 'api'])->redirect();
         }
