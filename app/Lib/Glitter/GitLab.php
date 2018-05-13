@@ -6,9 +6,10 @@ use App\Lib\GitLabApi\Api;
 
 class GitLab
 {
-    function __construct()
+    function __construct(App\User $user)
     {
-        $api = new Api();
+        $account = \App\LinkedSocialAccount::where('user_id', $user->id)->where('provider_name', 'gitlab')->first();
+        $api = new Api($account);
         $this->api = $api->api;
         $this->user = $api->user;
         $this->date = new DateTime();

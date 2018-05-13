@@ -28,7 +28,7 @@ class Glitter
         foreach ($users as $user) {
             $have_twitter = false;
             $have_gitlab = false;
-            $accounts = $user->accounts();
+            $accounts = $user->accounts;
             foreach ($accounts as $account) {
                 if ($account->provider_name === 'twitter') {
                     $have_twitter = true;
@@ -52,6 +52,15 @@ class Glitter
             $event_data = $gl->event_data();
             $tw = new Twitter();
             $tw->execute($gl->user->getName(), $event_data);
+        }
+        $this->unsetUser();
+    }
+
+    public function showEvents()
+    {
+        foreach ($this->getUsers() as $user) {
+            $this->setUser($user);
+            $gl = new GitLab();
         }
         $this->unsetUser();
     }

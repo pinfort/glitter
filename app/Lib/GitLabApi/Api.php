@@ -8,18 +8,18 @@ use Laravel\Socialite\AbstractUser;
 class Api
 {
     /**
-     * Socialite Provider user object
+     * account object
      */
-    protected $user;
+    protected $account;
 
     /**
      * connection to gitlab api
      */
     protected $api;
 
-    function __construct()
+    function __construct(\App\LinkedSocialAccount $account)
     {
-        $this->user = Socialite::with('gitlab')->user();
+        $this->account = $account;
         $this->api = $this->auth($this->user);
     }
 
@@ -27,7 +27,7 @@ class Api
     {
         $consumer_key = Config::get('services.gitlab.client_id');
         $consumer_secret = Config::get('services.gitlab.client_secret');
-        $token = $user->token;
+        $token = $account->access_token;
         return (new Client())->authenticate($token, Client::AUTH_OAUTH_TOKEN)->api;
     }
 }

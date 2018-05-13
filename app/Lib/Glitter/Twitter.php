@@ -7,9 +7,10 @@ use Config;
 
 class Twitter
 {
-    function __construct()
+    function __construct(App\User $user)
     {
-        $this->twitter = new Tweet();
+        $account = \App\LinkedSocialAccount::where('user_id', $user->id)->where('provider_name', 'twitter')->first();
+        $this->twitter = new Tweet($account);
     }
 
     protected function getTextFormat(): string
