@@ -64,7 +64,7 @@ class SocialAccountController extends Controller
             $provider,
             $access_token,
             $refresh_token,
-            $expires_in,
+            $expires_in
         );
 
         auth()->login($authUser, true);
