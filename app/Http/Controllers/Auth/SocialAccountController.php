@@ -48,7 +48,6 @@ class SocialAccountController extends Controller
         $access_token = null;
         $refresh_token = null;
         $expires_in = null;
-
         if ($provider === 'twitter') {
             $access_token = $user->token;
             $refresh_token = $user->tokenSecret;
@@ -94,13 +93,14 @@ class SocialAccountController extends Controller
                 redirect(route('login'));
             }
         }
-        $user->accounts()->create([
+        $account = $user->accounts()->create([
             'provider_id'   => $providerUser->getId(),
             'provider_name' => $provider,
-            'access_token'  => $access_token,
-            'refresh_token' => $refresh_token,
-            'token_expires_in' => $expires_in,
         ]);
+        $account->access_token = $access_token;
+        $account->refresh_token = $refresh_token;
+        $account->token_expires_in = $expires_in;
+        $account->save();
 
         return $user;
     }
