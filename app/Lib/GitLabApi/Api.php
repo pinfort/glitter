@@ -4,7 +4,6 @@ namespace App\Lib\GitLabApi;
 
 use Socialite;
 use Config;
-use Laravel\Socialite\AbstractUser;
 
 class Api
 {
