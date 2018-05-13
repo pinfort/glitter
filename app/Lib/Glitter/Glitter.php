@@ -46,7 +46,6 @@ class Glitter
 
     public function execute()
     {
-        $text = Tweet::getTextFormat();
         foreach ($this->getUsers() as $user) {
             $this->setUser($user);
             $gl = new GitLab();
