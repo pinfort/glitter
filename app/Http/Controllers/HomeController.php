@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Lib\Glitter\GitLab;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $account = \App\LinkedSocialAccount::where('user_id', \Auth::user()->id)->where('provider_name', 'gitlab')->first();
+        return view('home', ['account' => $account]);
     }
 }

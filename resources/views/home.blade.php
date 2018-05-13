@@ -14,7 +14,13 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    @if (is_null($account))
+                        <a class="btn btn-block btn-social btn-soundcloud"  href="/auth/login/gitlab">
+                            <span class="fa fa-gitlab"></span> Sign in with GitLab
+                        </a>
+                    @else
+                        Already connected.
+                    @endif
                 </div>
             </div>
         </div>
