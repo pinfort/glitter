@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Lib\TwitterApi;
+
 use Socialite;
 use Config;
 use Abraham\TwitterOAuth\TwitterOAuth;
