@@ -4,7 +4,6 @@ namespace App\Lib\TwitterApi;
 
 use Socialite;
 use Config;
-use Auth;
 use Abraham\TwitterOAuth\TwitterOAuth;
 
 class Tweet
@@ -19,9 +18,9 @@ class Tweet
      */
     protected $api;
 
-    function __construct()
+    function __construct(\App\LinkedSocialAccount $account)
     {
-        $this->account = Auth::user();
+        $this->account = $account;
         $this->api = $this->auth($this->account);
     }
 

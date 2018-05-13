@@ -61,6 +61,7 @@ class Glitter
         foreach ($this->getUsers() as $user) {
             $this->setUser($user);
             $gl = new GitLab();
+            var_dump($gl->event_data());
         }
         $this->unsetUser();
     }

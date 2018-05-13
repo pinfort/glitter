@@ -4,12 +4,13 @@ namespace App\Lib\Glitter;
 
 use App\Lib\TwitterApi\Tweet;
 use Config;
+use Auth;
 
 class Twitter
 {
-    function __construct(App\User $user)
+    function __construct()
     {
-        $account = \App\LinkedSocialAccount::where('user_id', $user->id)->where('provider_name', 'twitter')->first();
+        $account = \App\LinkedSocialAccount::where('user_id', Auth::user()->id)->where('provider_name', 'twitter')->first();
         $this->twitter = new Tweet($account);
     }
 

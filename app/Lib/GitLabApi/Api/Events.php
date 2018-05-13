@@ -15,4 +15,12 @@ class Events extends AbstractApi
         $resolver = $this->createOptionsResolver();
         return $this->get('events', $resolver->resolve($parameters));
     }
+
+    protected function createOptionsResolver()
+    {
+        $resolver = parent::createOptionsResolver();
+        $resolver->setDefined('before');
+        $resolver->setDefined('after');
+        return $resolver;
+    }
 }

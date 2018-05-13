@@ -26,7 +26,7 @@ class SocialAccountController extends Controller
     {
         in_array($provider, $this->services) ?: abort(404) ;
         if ($provider === 'gitlab') {
-            return Socialite::driver('gitlab')->scopes(['read_repository', 'read_user'])->redirect();
+            return Socialite::driver('gitlab')->scopes(['read_repository', 'read_user', 'api'])->redirect();
         }
         return Socialite::driver($provider)->redirect();
     }
@@ -54,8 +54,9 @@ class SocialAccountController extends Controller
         } else {
             $access_token = $user->token;
             $refresh_token = $user->refreshToken;
-            $time = new DateTime();
-            $expires_in = $time->add(DateInterval::createFromDateString($user->expiresIn.' seconds'));
+            $time = new \DateTime();
+            $time->setTimezone(new \DateTimeZone('Asia/Tokyo'));
+            $expires_in = $time->add(\DateInterval::createFromDateString($user->expiresIn.' seconds'));
         }
 
         $authUser = $this->findOrCreate(
