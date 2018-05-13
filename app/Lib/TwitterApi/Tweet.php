@@ -29,7 +29,8 @@ class Tweet
         $consumer_key = Config::get('services.twitter.client_id');
         $consumer_secret = Config::get('services.twitter.client_secret');
         $token = $account->access_token;
-        return new TwitterOAuth($consumer_key, $consumer_secret, null, $token);
+        $secret = $account->refresh_token;
+        return new TwitterOAuth($consumer_key, $consumer_secret, $token, $secret);
     }
 
     public function tweet(string $text)
