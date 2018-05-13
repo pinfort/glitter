@@ -10,7 +10,7 @@ class Twitter
 {
     function __construct()
     {
-        $account = \App\LinkedSocialAccount::where('user_id', Auth::user()->id)->where('provider_name', 'twitter')->first();
+        $account = \App\LinkedSocialAccount::where('user_id', Auth::user()->id)->where('provider_name', 'twitter')->firstOrFail();
         $this->twitter = new Tweet($account);
     }
 

@@ -9,7 +9,7 @@ class GitLab
 {
     function __construct()
     {
-        $account = \App\LinkedSocialAccount::where('user_id', Auth::user()->id)->where('provider_name', 'gitlab')->first();
+        $account = \App\LinkedSocialAccount::where('user_id', Auth::user()->id)->where('provider_name', 'gitlab')->firstOrFail();
         $api = new Api($account);
         $this->api = $api->api;
         $this->account = $api->account;
