@@ -13,7 +13,7 @@ class GitLab
         $this->date->setTimezone(new DateTimeZone('Asia/Tokyo'));
     }
 
-    protected function getEvents()
+    public function getEvents()
     {
         return $this->api('events')->all(
             [
