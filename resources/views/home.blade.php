@@ -20,6 +20,12 @@
                         </a>
                     @else
                         Already connected.
+
+                        <form method='post' action='/home'>
+                            @csrf
+                            <input type='hidden' name='_method' value='DELETE' />
+                            <button type='submit' class="btn btn-danger">アカウントを削除</button>
+                        </form>
                     @endif
                 </div>
             </div>

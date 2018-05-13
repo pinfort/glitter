@@ -34,3 +34,4 @@ Route::group(['prefix' => 'auth'], function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::delete('/home', 'HomeController@deleteAccount');
