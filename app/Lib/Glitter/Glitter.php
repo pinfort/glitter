@@ -37,7 +37,7 @@ class Glitter
                 }
             }
             if (!$have_gitlab or !$have_twitter) {
-                # gitlabかtwitterのアカウントどっちかがなければスキップ
+                // gitlabかtwitterのアカウントどっちかがなければスキップ
                 continue;
             }
             yield $user;
