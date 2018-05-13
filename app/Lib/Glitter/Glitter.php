@@ -22,7 +22,7 @@ class Glitter
         Auth::logout();
     }
 
-    protected function getUsers()
+    public function getUsers()
     {
         $users = User::all();
         foreach ($users as $user) {
@@ -51,7 +51,7 @@ class Glitter
             $gl = new GitLab();
             $event_data = $gl->event_data();
             $tw = new Twitter();
-            $tw->execute($gl->user->getName(), $event_data);
+            $tw->execute($event_data);
         }
         $this->unsetUser();
     }
@@ -64,5 +64,17 @@ class Glitter
             var_dump($gl->event_data());
         }
         $this->unsetUser();
+    }
+
+    public function getEvents()
+    {
+        $events = [];
+        foreach ($this->getUsers() as $user) {
+            $this->setUser($user);
+            $gl = new GitLab();
+            $events[] = $gl->event_data();
+        }
+        $this->unsetUser();
+        return $events;
     }
 }
