@@ -52,6 +52,7 @@ class Glitter
             $event_data = $gl->event_data();
             $tw = new Twitter();
             $tw->execute($event_data);
+            sleep(0.1);
         }
         $this->unsetUser();
     }
