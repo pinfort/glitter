@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Lib\GitLabApi;
+namespace App\Lib\GitLabAuth;
 
 use SocialiteProviders\GitLab\Provider as AbstractProvider;
 use SocialiteProviders\Manager\OAuth2\User;

@@ -17,7 +17,7 @@ class EventServiceProvider extends ServiceProvider
             'App\Listeners\EventListener',
         ],
         \SocialiteProviders\Manager\SocialiteWasCalled::class => [
-            'App\\Lib\\GitLabApi\\GitLabExtendSocialite@handle',
+            'App\\Lib\\GitLabAuth\\GitLabExtendSocialite@handle',
         ],
     ];
 

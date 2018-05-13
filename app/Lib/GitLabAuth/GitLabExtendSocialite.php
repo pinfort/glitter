@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Lib\GitLabApi;
+namespace App\Lib\GitLabAuth;
 
 use SocialiteProviders\Manager\SocialiteWasCalled;
 
