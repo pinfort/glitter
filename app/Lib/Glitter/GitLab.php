@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Lib\Glitter;
+
 use App\Lib\GitLabApi\Api;
 
 class GitLab
