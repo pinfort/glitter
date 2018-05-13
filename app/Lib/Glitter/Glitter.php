@@ -22,7 +22,7 @@ class Glitter
         Auth::logout();
     }
 
-    protected function getUsers()
+    public function getUsers()
     {
         $users = User::all();
         foreach ($users as $user) {
