@@ -10,7 +10,10 @@ class Twitter
 {
     function __construct()
     {
-        $account = \App\LinkedSocialAccount::where('user_id', Auth::user()->id)->where('provider_name', 'twitter')->firstOrFail();
+        $account = \App\LinkedSocialAccount::where('user_id', Auth::user()->id)->where('provider_name', 'twitter')->first();
+        if (is_null($account)) {
+            throw new \Exception('Twitter account not found');
+        }
         $this->twitter = new Tweet($account);
     }
 
@@ -19,20 +22,20 @@ class Twitter
         return Config::get('glitter.format');
     }
 
-    protected function formatText(string $text, string $username, array $event_data): string
+    protected function formatText(string $text, array $event_data): string
     {
         return sprintf(
             $text,
-            $username,
+            $event_data['name'],
             $event_data['date'],
             $event_data['events_count'],
             $event_data['commit_count']
         );
     }
 
-    public function execute(string $username, array $event_data)
+    public function execute(array $event_data)
     {
-        $text = $this->formatText($this->getTextFormat(), $username, $event_data);
+        $text = $this->formatText($this->getTextFormat(), $event_data);
         return $this->twitter->tweet($text);
     }
 }

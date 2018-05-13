@@ -9,7 +9,10 @@ class GitLab
 {
     function __construct()
     {
-        $account = \App\LinkedSocialAccount::where('user_id', Auth::user()->id)->where('provider_name', 'gitlab')->firstOrFail();
+        $account = \App\LinkedSocialAccount::where('user_id', Auth::user()->id)->where('provider_name', 'gitlab')->first();
+        if (is_null($account)) {
+            throw new \Exception('GitLab account not found');
+        }
         $api = new Api($account);
         $this->api = $api->api;
         $this->account = $api->account;
@@ -27,11 +30,17 @@ class GitLab
         );
     }
 
+    public function getUser(): array
+    {
+        return $this->api->api('user')->all();
+    }
+
     protected function analyzeEvents($events)
     {
         $date = new \DateTime();
         $date->setTimezone(new \DateTimeZone('Asia/Tokyo'));
         $event_data = [];
+        $event_data['name'] = $this->getUser()['name'];
         $event_data['date'] = $date->modify('-1 days')->format('Y-m-d');
         $event_data['events_count'] = count($events);
         $event_data['commit_count'] = 0;
