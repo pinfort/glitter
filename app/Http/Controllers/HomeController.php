@@ -27,4 +27,14 @@ class HomeController extends Controller
         $account = \App\LinkedSocialAccount::where('user_id', \Auth::user()->id)->where('provider_name', 'gitlab')->first();
         return view('home', ['account' => $account]);
     }
+
+    public function deleteAccount()
+    {
+        $user = \Auth::user();
+        $id = $user->id;
+        $user->accounts()->delete();
+        $user->delete();
+        \Auth::logout();
+        return redirect()->to('/');
+    }
 }

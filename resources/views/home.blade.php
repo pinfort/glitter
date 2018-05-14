@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card m-3">
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
@@ -23,6 +23,20 @@
                     @endif
                 </div>
             </div>
+            @if (!is_null($account))
+                <div class="card m-3">
+                    <div class="card-header">
+                        Manage
+                    </div>
+                    <div class="card-body">
+                        <form method='post' action='/home'>
+                            @csrf
+                            <input type='hidden' name='_method' value='DELETE' />
+                            <button type='submit' class="btn btn-danger">アカウントを削除</button>
+                        </form>
+                    </div>
+                </div>
+            @endif
         </div>
     </div>
 </div>
