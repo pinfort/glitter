@@ -22,5 +22,8 @@
     "dependencies": {
         "bootstrap-social": "^5.1.1",
         "font-awesome-scss": "^1.0.0"
+    },
+    "resolutions": {
+        "laravel-mix/img-loader/imagemin-pngquant": "5.0.1"
     }
 }
