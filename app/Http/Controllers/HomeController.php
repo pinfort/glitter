@@ -31,12 +31,8 @@ class HomeController extends Controller
     public function deleteAccount()
     {
         $user = \Auth::user();
-        // if (is_null($user)) {
-        //     return redirect(route('login'));
-        // }
         $id = $user->id;
-        \Log::info($id);
-        \App\LinkedSocialAccount::where('user_id', $id)->delete();
+        $user->accounts()->delete();
         $user->delete();
         \Auth::logout();
         return redirect()->to('/');
