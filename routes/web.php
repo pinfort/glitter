@@ -14,3 +14,23 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'auth'], function () {
+    Auth::routes();
+    Route::get(
+        'register',
+        function (Request $request) {
+            abort(404);
+        }
+    )->name('register');
+    Route::post(
+        'register',
+        function (Request $request) {
+            abort(404);
+        }
+    );
+    Route::get('login/{provider}',          'Auth\SocialAccountController@redirectToProvider');
+    Route::get('login/{provider}/callback', 'Auth\SocialAccountController@handleProviderCallback');
+});
+
+Route::get('/home', 'HomeController@index')->name('home');
