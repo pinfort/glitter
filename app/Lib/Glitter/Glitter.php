@@ -53,8 +53,9 @@ class Glitter
                 $event_data = $gl->event_data();
                 $tw = new Twitter();
                 $tw->execute($event_data);
-            } catch (Excecption $e) {
+            } catch (\Excecption $e) {
                 \Log::error('error on execute for '.$user->name);
+                \Log::error($e);
             }
             sleep(0.1);
         }
