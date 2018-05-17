@@ -48,10 +48,14 @@ class Glitter
     {
         foreach ($this->getUsers() as $user) {
             $this->setUser($user);
-            $gl = new GitLab();
-            $event_data = $gl->event_data();
-            $tw = new Twitter();
-            $tw->execute($event_data);
+            try {
+                $gl = new GitLab();
+                $event_data = $gl->event_data();
+                $tw = new Twitter();
+                $tw->execute($event_data);
+            } catch (Excecption $e) {
+                \Log::error('error on execute for '.$user->name);
+            }
             sleep(0.1);
         }
         $this->unsetUser();
