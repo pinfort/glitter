@@ -25,7 +25,7 @@ class GitLab
         return $this->api->api('events')->all(
             [
                 'before' => $date->format('Y-m-d'),
-                'after' => $date->modify('-1 days')->format('Y-m-d'),
+                'after' => $date->modify('-2 days')->format('Y-m-d'),
             ]
         );
     }
