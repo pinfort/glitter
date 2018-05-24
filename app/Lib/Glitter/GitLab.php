@@ -45,8 +45,8 @@ class GitLab
         $event_data['events_count'] = count($events);
         $event_data['commit_count'] = 0;
         foreach ($events as $event) {
-            if (isset($event['pushdata']) and isset($event['pushdata']['commit_count'])) {
-                $event_data['commit_count'] += $event['pushdata']['commit_count'];
+            if (isset($event['push_data']) and isset($event['push_data']['commit_count'])) {
+                $event_data['commit_count'] += $event['push_data']['commit_count'];
             } else {
                 continue;
             }
