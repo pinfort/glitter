@@ -1,4 +1,4 @@
-#### Glitter
+# Glitter
 [![Build Status](https://travis-ci.org/pinfort/glitter.svg?branch=master)](https://travis-ci.org/pinfort/glitter)
 
 ## About Glitter
