@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "0edd92e51cd485d01de5560bb8c2474e",
@@ -42,9 +42,9 @@
             "authors": [
                 {
                     "name": "Abraham Williams",
+                    "role": "Developer",
                     "email": "abraham@abrah.am",
-                    "homepage": "https://abrah.am",
-                    "role": "Developer"
+                    "homepage": "https://abrah.am"
                 }
             ],
             "description": "The most popular PHP library for use with the Twitter OAuth REST API.",
@@ -777,25 +777,25 @@
         },
         {
             "name": "fideloper/proxy",
-            "version": "4.0.0",
+            "version": "4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fideloper/TrustedProxy.git",
-                "reference": "cf8a0ca4b85659b9557e206c90110a6a4dba980a"
+                "reference": "03085e58ec7bee24773fa5a8850751a6e61a7e8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fideloper/TrustedProxy/zipball/cf8a0ca4b85659b9557e206c90110a6a4dba980a",
-                "reference": "cf8a0ca4b85659b9557e206c90110a6a4dba980a",
+                "url": "https://api.github.com/repos/fideloper/TrustedProxy/zipball/03085e58ec7bee24773fa5a8850751a6e61a7e8a",
+                "reference": "03085e58ec7bee24773fa5a8850751a6e61a7e8a",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "~5.0",
+                "illuminate/contracts": "^5.0|^6.0|^7.0",
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "illuminate/http": "~5.6",
-                "mockery/mockery": "~1.0",
+                "illuminate/http": "^5.0|^6.0|^7.0",
+                "mockery/mockery": "^1.0",
                 "phpunit/phpunit": "^6.0"
             },
             "type": "library",
@@ -827,7 +827,7 @@
                 "proxy",
                 "trusted proxy"
             ],
-            "time": "2018-02-07T20:20:57+00:00"
+            "time": "2019-09-03T16:45:42+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1486,9 +1486,9 @@
             "authors": [
                 {
                     "name": "Ben Corlett",
+                    "role": "Developer",
                     "email": "bencorlett@me.com",
-                    "homepage": "http://www.webcomm.com.au",
-                    "role": "Developer"
+                    "homepage": "http://www.webcomm.com.au"
                 }
             ],
             "description": "OAuth 1.0 Client Library",
@@ -3819,8 +3819,8 @@
             "authors": [
                 {
                     "name": "Filipe Dobreira",
-                    "homepage": "https://github.com/filp",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "homepage": "https://github.com/filp"
                 }
             ],
             "description": "php error handling for cool kids",
@@ -4144,18 +4144,18 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "email": "sebastian@phpeople.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpeople.de"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Component for reading phar.io manifest information from a PHP Archive (PHAR)",
@@ -4806,6 +4806,7 @@
                 "mock",
                 "xunit"
             ],
+            "abandoned": true,
             "time": "2018-04-11T04:50:36+00:00"
         },
         {
@@ -5455,8 +5456,8 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
