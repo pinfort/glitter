@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "0edd92e51cd485d01de5560bb8c2474e",
@@ -2622,16 +2622,16 @@
         },
         {
             "name": "socialiteproviders/gitlab",
-            "version": "v3.0.2",
+            "version": "v3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SocialiteProviders/GitLab.git",
-                "reference": "bab80e8e16853e062c58013b1c1f474bd5a5c49a"
+                "reference": "69e537f6192ca15483e98b8662495384f44299ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SocialiteProviders/GitLab/zipball/bab80e8e16853e062c58013b1c1f474bd5a5c49a",
-                "reference": "bab80e8e16853e062c58013b1c1f474bd5a5c49a",
+                "url": "https://api.github.com/repos/SocialiteProviders/GitLab/zipball/69e537f6192ca15483e98b8662495384f44299ca",
+                "reference": "69e537f6192ca15483e98b8662495384f44299ca",
                 "shasum": ""
             },
             "require": {
@@ -2655,24 +2655,25 @@
                 }
             ],
             "description": "GitLab OAuth2 Provider for Laravel Socialite",
-            "time": "2018-05-11T03:10:27+00:00"
+            "time": "2018-06-27T05:10:32+00:00"
         },
         {
             "name": "socialiteproviders/manager",
-            "version": "v3.3.1",
+            "version": "v3.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SocialiteProviders/Manager.git",
-                "reference": "1de3f3d874392da6f1a4c0bf30d843e9cd903ea7"
+                "reference": "09903d33429f9f6c0da32c545c036a3e18964bbf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SocialiteProviders/Manager/zipball/1de3f3d874392da6f1a4c0bf30d843e9cd903ea7",
-                "reference": "1de3f3d874392da6f1a4c0bf30d843e9cd903ea7",
+                "url": "https://api.github.com/repos/SocialiteProviders/Manager/zipball/09903d33429f9f6c0da32c545c036a3e18964bbf",
+                "reference": "09903d33429f9f6c0da32c545c036a3e18964bbf",
                 "shasum": ""
             },
             "require": {
-                "laravel/socialite": "~3.0",
+                "illuminate/support": "~5.4|~5.7.0|~5.8.0|^6.0",
+                "laravel/socialite": "~3.0|~4.0",
                 "php": "^5.6 || ^7.0"
             },
             "require-dev": {
@@ -2689,8 +2690,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "SocialiteProviders\\Manager\\": "src/",
-                    "SocialiteProviders\\Manager\\Test\\": "tests/"
+                    "SocialiteProviders\\Manager\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2701,10 +2701,18 @@
                 {
                     "name": "Andy Wendt",
                     "email": "andy@awendt.com"
+                },
+                {
+                    "name": "Anton Komarev",
+                    "email": "a.komarev@cybercog.su"
+                },
+                {
+                    "name": "Miguel Piedrafita",
+                    "email": "soy@miguelpiedrafita.com"
                 }
             ],
             "description": "Easily add new or override built-in providers in Laravel Socialite.",
-            "time": "2017-11-20T08:42:57+00:00"
+            "time": "2019-09-25T06:06:35+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -4806,6 +4814,7 @@
                 "mock",
                 "xunit"
             ],
+            "abandoned": true,
             "time": "2018-04-11T04:50:36+00:00"
         },
         {
