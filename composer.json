@@ -9,7 +9,7 @@
         "abraham/twitteroauth": "^0.7.4",
         "doctrine/dbal": "^2.7",
         "fideloper/proxy": "^4.0",
-        "laravel/framework": "5.8.*",
+        "laravel/framework": "6.9.*",
         "laravel/socialite": "^4.3",
         "laravel/tinker": "^1.0",
         "m4tthumphrey/php-gitlab-api": "^9.9",
