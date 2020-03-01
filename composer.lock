@@ -1437,16 +1437,16 @@
         },
         {
             "name": "m4tthumphrey/php-gitlab-api",
-            "version": "9.15.0",
+            "version": "9.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/m4tthumphrey/php-gitlab-api.git",
-                "reference": "0b2fc89046bc0cecb1a72728dc6767a28e32705c"
+                "reference": "a4c3d1638fc35a76cc276f53773d6c74820c0f29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/m4tthumphrey/php-gitlab-api/zipball/0b2fc89046bc0cecb1a72728dc6767a28e32705c",
-                "reference": "0b2fc89046bc0cecb1a72728dc6767a28e32705c",
+                "url": "https://api.github.com/repos/m4tthumphrey/php-gitlab-api/zipball/a4c3d1638fc35a76cc276f53773d6c74820c0f29",
+                "reference": "a4c3d1638fc35a76cc276f53773d6c74820c0f29",
                 "shasum": ""
             },
             "require": {
@@ -1463,12 +1463,12 @@
                 "guzzlehttp/psr7": "^1.2",
                 "php-http/guzzle6-adapter": "^1.0 || ^2.0",
                 "php-http/mock-client": "^1.2",
-                "phpunit/phpunit": "^5.7.27 || ^6.5"
+                "phpunit/phpunit": "^5.7.27 || ^7.5.15"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "9.14-dev"
+                    "dev-master": "9.16-dev"
                 }
             },
             "autoload": {
@@ -1501,7 +1501,7 @@
                 "api",
                 "gitlab"
             ],
-            "time": "2019-11-26T11:19:29+00:00"
+            "time": "2020-02-17T09:36:49+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1872,16 +1872,16 @@
         },
         {
             "name": "php-http/discovery",
-            "version": "1.7.0",
+            "version": "1.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/discovery.git",
-                "reference": "e822f86a6983790aa17ab13aa7e69631e86806b6"
+                "reference": "82dbef649ccffd8e4f22e1953c3a5265992b83c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/discovery/zipball/e822f86a6983790aa17ab13aa7e69631e86806b6",
-                "reference": "e822f86a6983790aa17ab13aa7e69631e86806b6",
+                "url": "https://api.github.com/repos/php-http/discovery/zipball/82dbef649ccffd8e4f22e1953c3a5265992b83c0",
+                "reference": "82dbef649ccffd8e4f22e1953c3a5265992b83c0",
                 "shasum": ""
             },
             "require": {
@@ -1933,7 +1933,7 @@
                 "message",
                 "psr7"
             ],
-            "time": "2019-06-30T09:04:27+00:00"
+            "time": "2020-01-03T11:25:47+00:00"
         },
         {
             "name": "php-http/guzzle6-adapter",
@@ -3566,16 +3566,16 @@
         },
         {
             "name": "symfony/options-resolver",
-            "version": "v5.0.1",
+            "version": "v5.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/options-resolver.git",
-                "reference": "1ad3d0ffc00cc1990e5c9c7bb6b81578ec3f5f68"
+                "reference": "b1ab86ce52b0c0abe031367a173005a025e30e04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/1ad3d0ffc00cc1990e5c9c7bb6b81578ec3f5f68",
-                "reference": "1ad3d0ffc00cc1990e5c9c7bb6b81578ec3f5f68",
+                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/b1ab86ce52b0c0abe031367a173005a025e30e04",
+                "reference": "b1ab86ce52b0c0abe031367a173005a025e30e04",
                 "shasum": ""
             },
             "require": {
@@ -3616,7 +3616,7 @@
                 "configuration",
                 "options"
             ],
-            "time": "2019-11-18T17:27:11+00:00"
+            "time": "2020-01-04T14:08:26+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
